@@ -134,7 +134,44 @@
     
 },3000);
 	
-   </script> 
+
+   </script>
+   
+    <script type="text/javascript">
+	
+	function loadDecrypt(){
+    
+    var XHR = new XMLHttpRequest();
+    XHR.open("GET","decryptAll",true);
+    
+    XHR.onreadystatechange = function(){
+        
+        if(XHR.readyState == 4 ){
+            if(XHR.status == 200){
+            	
+            	var lastmessage = JSON.parse(this.responseText);          
+            	
+				var html="";
+				
+				for(var item in lastmessage){
+				html += "<div class ='a'> ";
+            	html += "<p class='username'>" + lastmessage[item].musername + "</p></br" ;
+            	html += "<p class='message'>" + lastmessage[item].mmesage + "</p></br>" ;
+            	html += "<p class='date'>" + lastmessage[item].mdate + "</p></br>" ;
+            	html += "</div>" ;
+            		 
+            	document.getElementById("middle").innerHTML=html;     
+				}
+            }
+            else
+                console.log('problem with request');   
+        }   
+    }
+
+    XHR.send();
+    
+	}
+   </script>
    
 </head>
 <body>
@@ -163,7 +200,7 @@
 					<textarea rows="5" cols="50" class="text" name="message" required></textarea>
 				</div>		
 				<p><input type="submit" value="encrypt&send" class="btn"></p>
-				<button type="button" class="decrypt">decrypt</button>
+				<button type="button" class="decrypt" onclick="loadDecrypt()">decrypt</button>
 	    </div>
 	</div>
 </form>

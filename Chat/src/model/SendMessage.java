@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.jstl.core.Config;
 
 import bean.MessageBean;
+import controller.AESImpl;
 import dao.SendMessageDao;
 import dao.GetAllMessages;
 import dao.GetMessageDao;
@@ -38,6 +39,9 @@ public class SendMessage extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		
 		String message = req.getParameter("message");
+		
+		message=AESImpl.encrypt(message);
+		
 		req.setAttribute("message",message);
 		
 		
