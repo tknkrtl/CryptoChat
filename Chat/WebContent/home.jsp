@@ -16,7 +16,7 @@
 		    justify-content: center;
 		    text-align: center;
 		    overflow: hidden;
-		    background: #3D9970;
+		    background: gray;
 		}
 		.leftwrapper{
 		position: relative;
@@ -40,8 +40,18 @@
 		text-align: center;
 		}
 		.btn{
-		padding: 2px;
-		float: none;
+		display: inline-block;
+		float: left;
+		margin-left: 30px;
+		
+		}
+		.decrypt{
+		display: inline-block;
+		float: right;
+		height: 20px;
+		width: 100px;
+		margin-right: 30px;
+		
 		}
 		.h2{
 		text-align: center;
@@ -49,15 +59,13 @@
 		top: 10%;
 		}
 		.Center{
-			text-align: center;
+			display: inline-block;
 		    width:250px;
 		    height:200px;
 		    background:#0088cc;
 		    margin: auto;
 		    border-radius:5%;
 		    display: flex;
-		 	 align-items: center;
-		  	justify-content: center;
 		}
 		.middlewrapper{
 		
@@ -69,24 +77,6 @@
 		height: 900px;
 		width: 500px;
 		float: left;
-		
-		}
-		.rightwrapper{
-		border: 2px solid blue;
-		position: relative;
-		height: 200px;
-		width: 200px;
-		float : right;
-		
-		}
-		.decrypt{
-		float: right;
-		overflow: hidden;
-		position: relative;
-		padding: 10px;
-		height: 30px;
-		width: 40px;
-		border: 2px solid green;
 		
 		}
 		.a{
@@ -102,7 +92,7 @@
 		}
 		.message{
 		position: relative;
-		color: teal;
+		color: black;
 		}
 		.date{
 		position: relative;
@@ -173,13 +163,12 @@
 					<textarea rows="5" cols="50" class="text" name="message" required></textarea>
 				</div>		
 				<p><input type="submit" value="encrypt&send" class="btn"></p>
+				<button type="button" class="decrypt">decrypt</button>
 	    </div>
 	</div>
 </form>
-
-	<div class="rightwrapper">
 	
-	</div>
+	
 
 
 
