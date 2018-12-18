@@ -7,12 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
 
 import bean.MessageBean;
-import model.RegisterServlet;
 
-public class GetAllMessages {
+
+public class GetAllMessages{
 	
 	public static List<MessageBean> getAllMessages () {	
 	
@@ -39,6 +38,7 @@ public class GetAllMessages {
 				allMessageList.add(mb);
 				
 				}
+			
 			ps.close();
 			con.close();
 			rs.close();

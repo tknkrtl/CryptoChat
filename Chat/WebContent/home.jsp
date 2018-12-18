@@ -70,7 +70,8 @@
 		.middlewrapper{
 		
 		border: 2px solid black;
-		overflow: auto;
+		overflow: scroll;
+		overflow-x: hidden;
 		left: 15%;
 		position: relative;
 		margin-left: 400px;
@@ -83,7 +84,7 @@
 		text-align: center;
 		border: 2px solid teal;
 		height: 150px;
-		width: 100%;
+		max-width: 100%;
 		margin: auto;
 		}
 		.username{

@@ -20,7 +20,7 @@ import dao.GetAllMessages;
 import dao.GetMessageDao;
 import dao.RegisterDao;
 
-@WebServlet("/RegisterServlet")
+@WebServlet("/RegisterServlet/*")
 
 public class RegisterServlet extends HttpServlet {
 	
@@ -31,6 +31,11 @@ public class RegisterServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		
 		
+		
+		
+		
+		
+		System.out.println(req.getPathInfo());
 		String email =req.getParameter("email");
 		String username =req.getParameter("username");
 		String psw =req.getParameter("psw");

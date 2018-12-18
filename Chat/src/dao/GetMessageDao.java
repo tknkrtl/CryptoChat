@@ -10,6 +10,10 @@ import java.util.List;
 import model.RegisterServlet;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.eclipse.jdt.internal.compiler.ast.LabeledStatement;
 
@@ -18,7 +22,7 @@ import com.mysql.cj.Session;
 import bean.MessageBean;
 import dao.dbconnection;
 
-public class GetMessageDao {
+public class GetMessageDao extends HttpServlet{
 	
 	static List<MessageBean> messageList= new ArrayList<>();
 	static int lastmessagesent=-1;
@@ -29,6 +33,8 @@ public class GetMessageDao {
 //		System.out.println(id);
 		
 		try {
+			
+			
 			String username="";
 			String date="";
 			String message="";
@@ -43,7 +49,6 @@ public class GetMessageDao {
 				
 				if(rs.isLast() && (lastmessagesent!=rs.getInt("idmessage")))
 				{
-				System.out.println(lastmessagesent);
 				username=rs.getString("username");
 				date=rs.getString("date");
 				message=rs.getString("message");

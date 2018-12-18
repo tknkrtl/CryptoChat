@@ -31,12 +31,8 @@ public class DecryptAll extends HttpServlet{
 		
 		for(int i=0;i<allMessageList.size();i++)
 		{
-			allMessageList.get(i).setMmesage(AESImpl.decrypt(allMessageList.get(i).getMmesage()));
-			System.out.println(allMessageList.get(i).getMmesage());
+			allMessageList.get(i).setMmesage(AESImpl.decrypt(allMessageList.get(i).getMmesage(), AESImpl.keyList.get(i) ,AESImpl.initVectorList.get(i) ));
 		}
-		
-		
-		
 		ajaxdata=JsonConvert.convert(allMessageList);
 		
 		resp.setContentType("application/json");
